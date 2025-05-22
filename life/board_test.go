@@ -66,7 +66,6 @@ func TestLoadLife106(t *testing.T) {
 	}
 }
 
-// Helper to avoid using a real file in tests
 func parseLife106String(input string) types.Board {
 	board := make(types.Board)
 	lines := strings.Split(input, "\n")

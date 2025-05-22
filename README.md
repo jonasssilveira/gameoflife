@@ -40,7 +40,7 @@ conway-game-of-life/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/gameoflife.git
+git clone https://github.com/jonasssilveira/gameoflife.git
 cd conway-game-of-life
 ```
 

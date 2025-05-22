@@ -15,7 +15,10 @@ func main() {
 	rate := flag.Int("rate", 500, "Update rate between generations in milliseconds")
 	flag.Parse()
 
-	board := life.LoadLife106(*file)
+	board, err := life.LoadLife106(*file)
+	if err != nil {
+		panic(err)
+	}
 	renderer := render.GetRenderer()
 
 	for i := 0; i <= *gens; i++ {

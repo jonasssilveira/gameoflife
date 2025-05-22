@@ -8,10 +8,10 @@ import (
 	"strings"
 )
 
-func LoadLife106(path string) types.Board {
+func LoadLife106(path string) (types.Board, error) {
 	file, err := os.Open(path)
 	if err != nil {
-		return nil
+		return nil, err
 	}
 	defer file.Close()
 
@@ -29,10 +29,14 @@ func LoadLife106(path string) types.Board {
 			continue
 		}
 
-		x, _ := strconv.Atoi(parts[0])
-		y, _ := strconv.Atoi(parts[1])
+		x, err1 := strconv.Atoi(parts[0])
+		y, err2 := strconv.Atoi(parts[1])
+		if err1 != nil || err2 != nil {
+			continue
+		}
+
 		board[types.Point{X: x, Y: y}] = true
 	}
 
-	return board
+	return board, nil
 }
